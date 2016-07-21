@@ -1,0 +1,9 @@
+{%extends "master.html"%}
+{%block contenido%}
+	<form method="POST" role="form">{%csrf_token%}
+		<div>
+			{{f.as_p}}<br>
+			<input type="submit" value="Guardar" class="btn btn-primary btn-sm">
+		</div>
+	</form>
+{%endblock%}

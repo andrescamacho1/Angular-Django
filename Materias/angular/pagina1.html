@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="angular/angular.min.js"></script>
+	<script src="angular/angular-resource.min.js"></script>
+	<script src="js/pagina1.js"></script>
+	 <body style="background: url(1.jpg) no-repeat; width: 100%; height: 150px; background-size: 100%;">
+</head>
+<body>
+<div ng-app="app">
+	<div ng-controller="controlador">
+		
+	<br><br><br><br><br><br><br><br><br><br>
+	
+	<div class="container">	
+
+		<form >
+		<div  class="form-group">
+		<div class="well">
+		<h1 align="center">INGRESE SU CEDULA</h1>
+		<p  class="text-center">
+			<input type="text"  class="form-control" ng-model="idCedula" placeholder="Ingrese su Cedula"><br>
+			<input class="btn btn-primary" type="submit" value="Consultar" ng-click="contador()">
+		</p>
+		</div>
+		</form>	
+
+	</div>
+</div>
+	<div class="container">
+		<div class="well">
+		<h2 align="center">Filtrar</h2>
+		<p  class="text-center">
+			
+		<input type="text" ng-model="buscar" placeholder="ingrese el dato">
+		</div>
+		</p>
+
+		<table class="table">
+			<tr class="danger">
+				<td>Identifacion Materia</td>
+				<td>Nombre</td>
+				<td>Apellido</td>
+				<td>Cedula</td>
+
+			</tr>
+			<tr class="active" ng-repeat="f in lista | filter:buscar">
+			<td>{{f.idCA}}</td>
+			<td>{{f.nombre}}</td>
+			<td>{{f.apellido}}</td>
+			<td>{{f.cedula}}</td>			
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

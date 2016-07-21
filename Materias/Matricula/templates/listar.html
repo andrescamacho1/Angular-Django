@@ -1,0 +1,52 @@
+{%extends "master.html" %}
+{%block contenido%}
+<section>
+<!--
+	{%if alumno%}
+		<h3>LISTA DE ALUMNOS REGISTRADOS</h3>
+		<table class="table table-hover">
+			<tr style="background:#00BFFF; color:#000000">
+				<td>Cedula</td>
+				<td>Nombres</td>
+				<td>Apellido</td>					
+				<td>opciones</td>
+			</tr>
+			{%for p in alumno%}
+			<tr>
+				<td>{{p.cedula}}</td>
+				<td>{{p.nombre}}</td>
+				<td>{{p.apellido}}</td>
+				<td><a href="../modificar?cedula={{p.cedula}}" title="Modificar"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>  |  <a href="../eliminar?cedula={{p.cedula}}"><span title="Eliminar" class="glyphicon glyphicon-remove" aria-hidden="true"></td>
+			</tr>
+			{%endfor%}
+		</table>
+	{%else%}
+		<h3>NO HAY ALUMNOS EN LA BASE</h3>	
+	{%endif%}
+</section><br><br>
+<a href="../crear"class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Agregar Alumno</a>
+
+-->	
+
+
+{%if materia%}
+		<h3>LISTA DE MATERIAS REGISTRADOS</h3>
+		<table class="table table-hover">
+			<tr style="background:#00BFFF; color:#000000">
+				<td>Nombres</td>
+				<td>Cupos</td>
+			</tr>
+			{%for p in materia%}
+			<tr>
+				<td><a href="../listarAlumno" class="btn btn-success">{{p.nombre}}</a></td>
+				<td>{{p.cupos}}</td>				
+			</tr>
+			{%endfor%}
+		</table>
+	{%else%}
+		<h3>NO HAY MATERIAS EN LA BASE</h3>	
+
+	{%endif%}
+
+<a href="../crear"class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Agregar Alumno</a>
+{%endblock%}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="angular/angular.min.js"></script>
+	<script src="angular/angular-resource.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="js/pagina2.js"></script>
+	 <body style="background: url(a.jpg) no-repeat; width: 100%; height: 150px; background-size: 100%;">
+</head>
+<body >
+<div ng-app="app"> 
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+	<h1 align="center">LISTA DE MATERIAS</h1>
+	<div ng-controller="controlador">	
+	<div class="container">
+	<div class="form-group">
+	<div  class="table-responsive">
+	<table class="table table-bordered">
+			<tr class="info">
+				<td>Nombre</td>
+				<td>Cupos</td>
+
+			</tr>
+
+			<tr ng-repeat="f in lista">
+				<td>{{f.nombre}}</td>
+				<td>{{f.cupos}}</td>
+			</tr>
+		</table>
+	</div>
+	</div>
+	</div>
+		
+		
+	
+
+
+	</div>
+</div>
+
+</body>
+</html>

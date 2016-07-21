@@ -1,0 +1,8 @@
+{%extends "master.html"%}
+{%block contenido%}
+	<form method="POST" role="form">{%csrf_token%}
+		{{form.as_p}}
+		<input type="submit" value="Guardar Cambios"  class="btn btn-primary btn-sm">
+		<a href="../listar" class="btn btn-primary btn-sm"> Cancelar</a>
+	</form>
+{%endblock%}

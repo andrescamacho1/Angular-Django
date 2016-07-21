@@ -1,0 +1,25 @@
+{%load staticfiles%}
+<!DOCYTPE HTML>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	</head>
+	<body>
+		<center>
+			<div class="container">
+				{%include "header.html"%}
+				{%if messages%}
+					{% for msg in messages %}      
+						<div class="alert alert-{{msg.level_tag}}" role="alert">
+							{{msg.message}}
+						</div>
+					{%endfor%}
+				{%endif%}
+				{%block contenido%}
+				{%endblock%}
+			</div>
+		</center>
+	</body>
+</html>	
